@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Scavenger Hunt App</h1>
+    <div id="app">
+        <button id="startHunt">Start Hunt</button>
+        <div id="huntOptions" style="display: none;">
+            <h2>Choose Your Hunt</h2>
+            <button class="huntOption" data-hunt="streetArt">Street Art Adventure</button>
+            <button class="huntOption" data-hunt="nature">Nature Hunt</button>
+            <button class="huntOption" data-hunt="garden">Botanic Garden Explorer</button>
+        </div>
+        <div id="cameraSection" style="display: none;">
+            <h2>Take a Photo</h2>
+            <button id="openCamera">Open Camera</button>
+            <div id="cameraPreview"></div>
+            <div id="huntStatus"></div>
+            <input type="file" id="uploadImage" accept="image/*" style="display: none;">
+            <button id="uploadButton" style="display: none;">Upload Photo</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

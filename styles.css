@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#startHunt {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startHunt:hover {
+    background-color: #45a049;
+}
+
+#huntOptions {
+    margin-top: 20px;
+}
+
+.huntOption {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.huntOption:hover {
+    background-color: #007B9A;
+}
+
+#cameraSection {
+    margin-top: 20px;
+}
+
+#openCamera {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#openCamera:hover {
+    background-color: #f57c00;
+}
+
+#cameraPreview {
+    margin-top: 20px;
+    border: 2px solid #333;
+    height: 240px;
+    width: 320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+#huntStatus {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+#uploadButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#uploadButton:hover {
+    background-color: #7B1FA2;
+}
