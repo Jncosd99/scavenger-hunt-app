@@ -16,6 +16,24 @@ document.querySelectorAll(".huntOption").forEach(button => {
     });
 });
 
+document.querySelectorAll(".uiverse").forEach(button => {
+    button.addEventListener("click", function() {
+        const text = this.querySelector("span").textContent;
+        if (text === "Start Exploring") {
+            document.getElementById("huntOptions").style.display = "block";
+            document.getElementById("headerSection").style.display = "none";
+        } else if (text === "Learn More") {
+            alert("Learn more about the app features!");
+        } else if (text === "Sign In") {
+            let username = prompt("Enter your username:");
+            if (username) {
+                localStorage.setItem("user", username);
+                alert(`Welcome, ${username}! Your progress will be tracked.`);
+            }
+        }
+    });
+});
+
 document.getElementById("openCamera").addEventListener("click", function() {
     document.getElementById("uploadImage").style.display = "block";
     document.getElementById("uploadButton").style.display = "block";
