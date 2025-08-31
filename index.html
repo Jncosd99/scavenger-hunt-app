@@ -11,8 +11,8 @@
         <div id="headerSection">
             <img src="C:\Users\Joseph Passe\scavenger-hunt-app\Header.png" alt="Header" id="headerImage">
             <div id="headerText">
-                <h1 style="font-size: 48px; font-weight: bold; color: rgba(255, 255, 255, 0.7); margin: 20px 0;">Adventure Awaits</h1>
-                <p style="font-size: 18px; color: rgba(255, 255, 255, 0.7); margin: 10px 0;">Discover hidden gems through GPS-powered photo scavenger hunts. Explore murals, nature, gardens, and trails in your city!</p>
+                <h1 style="font-size: 48px; font-weight: bold; color: rgba(255, 255, 255, 0.9); margin: 20px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Adventure Awaits</h1>
+                <p style="font-size: 18px; color: rgba(255, 255, 255, 0.9); margin: 10px 0; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">Discover hidden gems through GPS-powered photo scavenger hunts. Explore murals, nature, gardens, and trails in your city!</p>
             </div>
             <div id="headerButtons">
                 <button class="uiverse"><div class="wrapper"><span>Start Exploring</span><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-4"></div><div class="circle circle-5"></div><div class="circle circle-6"></div><div class="circle circle-7"></div><div class="circle circle-8"></div><div class="circle circle-9"></div><div class="circle circle-10"></div><div class="circle circle-11"></div><div class="circle circle-12"></div></div></button>
@@ -20,19 +20,14 @@
                 <button class="uiverse"><div class="wrapper"><span>Sign In</span><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-4"></div><div class="circle circle-5"></div><div class="circle circle-6"></div><div class="circle circle-7"></div><div class="circle circle-8"></div><div class="circle circle-9"></div><div class="circle circle-10"></div><div class="circle circle-11"></div><div class="circle circle-12"></div></div></button>
             </div>
         </div>
-        <div id="huntOptions" style="display: none;">
-            <h2>Choose Your Hunt</h2>
-            <button class="huntOption" data-hunt="streetArt">Street Art Adventure</button>
-            <button class="huntOption" data-hunt="nature">Nature Hunt</button>
-            <button class="huntOption" data-hunt="garden">Botanic Garden Explorer</button>
-        </div>
-        <div id="cameraSection" style="display: none;">
-            <h2>Take a Photo</h2>
-            <button id="openCamera">Open Camera</button>
-            <div id="cameraPreview"></div>
-            <div id="huntStatus"></div>
-            <input type="file" id="uploadImage" accept="image/*" style="display: none;">
-            <button id="uploadButton" style="display: none;">Upload Photo</button>
+        <div id="huntCards"></div>
+        <div id="adminPanel" style="display: none;">
+            <h2>Create New Hunt</h2>
+            <form id="huntForm">
+                <input type="text" id="huntName" placeholder="Hunt Name" required><br>
+                <textarea id="huntDescription" placeholder="Hunt Description" required></textarea><br>
+                <button type="submit">Create Hunt</button>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,74 +1,34 @@
 console.log("Scavenger Hunt App Initialized");
 
-document.getElementById("startHunt").addEventListener("click", function() {
-    document.getElementById("huntOptions").style.display = "block";
-    this.style.display = "none";
-});
+const ADMIN_KEY = "yourSecretKey"; // Replace with your chosen key
+let isAdmin = false;
 
-document.querySelectorAll(".huntOption").forEach(button => {
-    button.addEventListener("click", function() {
-        const hunt = this.getAttribute("data-hunt");
-        alert(`Starting ${hunt.charAt(0).toUpperCase() + hunt.slice(1)} Hunt!`);
-        document.getElementById("huntOptions").style.display = "none";
-        document.getElementById("cameraSection").style.display = "block";
-        getLocation();
-        updateHuntStatus(`Hunt started: ${hunt.charAt(0).toUpperCase() + hunt.slice(1)}`);
-    });
-});
+window.onload = function() {
+    const adminKey = prompt("Enter Admin Key:");
+    if (adminKey === ADMIN_KEY) {
+        isAdmin = true;
+        document.getElementById("adminPanel").style.display = "block";
+    }
+};
 
-document.querySelectorAll(".uiverse").forEach(button => {
-    button.addEventListener("click", function() {
-        const text = this.querySelector("span").textContent;
-        if (text === "Start Exploring") {
-            document.getElementById("huntOptions").style.display = "block";
-            document.getElementById("headerSection").style.display = "none";
-        } else if (text === "Learn More") {
-            alert("Learn more about the app features!");
-        } else if (text === "Sign In") {
-            let username = prompt("Enter your username:");
-            if (username) {
-                localStorage.setItem("user", username);
-                alert(`Welcome, ${username}! Your progress will be tracked.`);
-            }
-        }
-    });
-});
+function createHuntCard(name, description) {
+    const huntCards = document.getElementById("huntCards");
+    const card = document.createElement("div");
+    card.className = "hunt-card";
+    card.innerHTML = `
+        <h3>${name}</h3>
+        <p>${description}</p>
+        <button class="start-button" data-hunt="${name.toLowerCase().replace(/\s+/g, '-')}" style="padding: 10px; background-color: #008CBA; color: white; border: none; border-radius: 5px; cursor: pointer;">Start</button>
+    `;
+    huntCards.appendChild(card);
+}
 
-document.getElementById("openCamera").addEventListener("click", function() {
-    document.getElementById("uploadImage").style.display = "block";
-    document.getElementById("uploadButton").style.display = "block";
-    this.style.display = "none";
-});
-
-document.getElementById("uploadButton").addEventListener("click", function() {
-    const input = document.getElementById("uploadImage");
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById("cameraPreview").innerHTML = `<img src="${e.target.result}" style="max-width: 100%; max-height: 100%;">`;
-            updateHuntStatus("Photo uploaded!");
-        };
-        reader.readAsDataURL(input.files[0]);
+document.getElementById("huntForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (isAdmin) {
+        const name = document.getElementById("huntName").value;
+        const description = document.getElementById("huntDescription").value;
+        createHuntCard(name, description);
+        this.reset();
     }
 });
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        document.getElementById("cameraPreview").innerText = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    document.getElementById("cameraPreview").innerText = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
-    updateHuntStatus("Location detected!");
-}
-
-function showError(error) {
-    document.getElementById("cameraPreview").innerText = `Error: ${error.message}`;
-}
-
-function updateHuntStatus(message) {
-    document.getElementById("huntStatus").innerText = message;
-}
