@@ -36,7 +36,7 @@ body {
 
 #headerButtons {
     position: absolute;
-    bottom: 300px;
+    bottom: 0.5cm;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
