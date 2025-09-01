@@ -391,3 +391,24 @@ body {
 #adminPanel button:hover {
     background-color: #45a049;
 }
+
+@media (max-width: 768px) {
+    #headerButtons {
+        bottom: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .uiverse {
+        width: 80%;
+        margin: 0 auto 10px;
+    }
+    .hunt-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hunt-card {
+        width: 90%;
+    }
+}
