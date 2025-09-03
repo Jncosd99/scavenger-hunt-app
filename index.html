@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <div id="headerSection">
-            <img src="Header.png" alt="Header" id="headerImage"> <!-- Updated to relative path -->
+            <img src="Header.png" alt="Header" id="headerImage">
             <div id="headerText">
                 <h1 style="font-size: 48px; font-weight: bold; color: rgba(255, 255, 255, 0.9); margin: 20px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Adventure Awaits</h1>
                 <p style="font-size: 18px; color: rgba(255, 255, 255, 0.9); margin: 10px 0; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">Discover hidden gems through GPS-powered photo scavenger hunts. Explore murals, nature, gardens, and trails in your city!</p>
@@ -18,17 +18,11 @@
                 <button class="uiverse"><div class="wrapper"><span>Start Exploring</span><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-4"></div><div class="circle circle-5"></div><div class="circle circle-6"></div><div class="circle circle-7"></div><div class="circle circle-8"></div><div class="circle circle-9"></div><div class="circle circle-10"></div><div class="circle circle-11"></div><div class="circle circle-12"></div></div></button>
                 <button class="uiverse"><div class="wrapper"><span>Learn More</span><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-4"></div><div class="circle circle-5"></div><div class="circle circle-6"></div><div class="circle circle-7"></div><div class="circle circle-8"></div><div class="circle circle-9"></div><div class="circle circle-10"></div><div class="circle circle-11"></div><div class="circle circle-12"></div></div></button>
                 <button class="uiverse"><div class="wrapper"><span>Sign In</span><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-4"></div><div class="circle circle-5"></div><div class="circle circle-6"></div><div class="circle circle-7"></div><div class="circle circle-8"></div><div class="circle circle-9"></div><div class="circle circle-10"></div><div class="circle circle-11"></div><div class="circle circle-12"></div></div></button>
+                <button class="uiverse" id="createHuntButton"><div class="wrapper"><span>Create Hunt</span><div class="circle circle-1"></div><div class="circle circle-2"></div><div class="circle circle-3"></div><div class="circle circle-4"></div><div class="circle circle-5"></div><div class="circle circle-6"></div><div class="circle circle-7"></div><div class="circle circle-8"></div><div class="circle circle-9"></div><div class="circle circle-10"></div><div class="circle circle-11"></div><div class="circle circle-12"></div></div></button>
             </div>
         </div>
+        <div id="statCards"></div>
         <div id="huntCards"></div>
-        <div id="adminPanel" style="display: none;">
-            <h2>Create New Hunt</h2>
-            <form id="huntForm">
-                <input type="text" id="huntName" placeholder="Hunt Name" required><br>
-                <textarea id="huntDescription" placeholder="Hunt Description" required></textarea><br>
-                <button type="submit">Create Hunt</button>
-            </form>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
